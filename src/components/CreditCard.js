@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import visa from '../assets/images/visa.png';
-import masterCard from '../assets/images/master-card.svg';
 
 const CreditCardWrapper = styled.div`
     padding: 20px;
@@ -21,7 +19,7 @@ const CreditLogo = styled.img`
 export const CreditCard = ({type,number,expirationMonth,expirationYear,bank,owner,bgColor,color}) => {
     return (
         <CreditCardWrapper bgColor={bgColor} color={color}>
-            <CreditLogo src={type.toLowerCase() === 'visa'? visa : masterCard }/>
+            <CreditLogo src={`../assets/images/{type.toLowerCase()}.png` }/>
             <div>
                 <h3>{'**** '.repeat(4)} {number.substring(12)}</h3>
                 <p>{owner}&#9;{bank}</p>

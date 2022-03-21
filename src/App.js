@@ -1,5 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
 import {IdCard} from './components/IdCard';
 import {Greetings} from './components/Greetings';
 import {Random} from './components/Random';
@@ -7,10 +5,17 @@ import {BoxColor} from './components/BoxColor';
 import {CreditCard} from './components/CreditCard';
 import {Rating} from './components/Rating';
 import {DriverCard} from './components/DriverCard';
+import { LikeButton } from './components/LikeButton';
+import { ClickablePicture } from './components/ClickablePicture';
+import { Dice } from './components/Dice';
+import {Carousel} from './components/Carousel';
+import {NumbersTable} from './components/NumbersTable';
+import {FaceBook} from './components/FaceBook';
+import { SignupPage } from './components/SignupPage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="container" style={{maxWidth:'768px'}}>
       <IdCard
           lastName='Doe'
           firstName='John'
@@ -98,6 +103,34 @@ function App() {
             licensePlate: "BE33ER"
           }}
         />
+        <div style={{padding: '20px'}}>
+          <LikeButton/><LikeButton/>
+        </div>
+        <div>
+        <ClickablePicture
+          img='./assets/images/maxence.png'
+          imgClicked='./assets/images/maxence-glasses.png'
+        />
+        </div>
+        <div>
+          <Dice />
+        </div>
+
+        <Carousel
+            images={[
+              'https://randomuser.me/api/portraits/women/1.jpg',
+              'https://randomuser.me/api/portraits/men/1.jpg',
+              'https://randomuser.me/api/portraits/women/2.jpg',
+              'https://randomuser.me/api/portraits/men/2.jpg'
+            ]}
+          />
+        
+        <NumbersTable limit={12} />
+
+        <FaceBook />
+
+        <SignupPage />
+
     </div>
   );
 }
